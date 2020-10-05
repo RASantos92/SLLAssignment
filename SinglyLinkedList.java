@@ -3,7 +3,6 @@ public class SinglyLinkedList {
     public SinglyLinkedList() {
         this.head = null;
     }
-    // SLL methods go here. As a starter, we will show you how to add a node to the list.
     public void add(int value) {
         Node newNode = new Node(value);
         if(head == null) {
@@ -36,5 +35,25 @@ public class SinglyLinkedList {
                 runner = runner.next;
             }
         }
-    }  
+    } 
+    public void reverseVal(){
+        if (head == null){
+            System.out.println("thers nothing to return");
+        }
+        else{
+            Node current = head;
+            Node next = null;
+            Node previous = null;
+            while(current != null){
+                next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+            head = previous;
+            return;
+        }
+        
+
+    } 
 }
